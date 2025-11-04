@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Saya - Nur Laela Khamadah</title>
+    <link rel="stylesheet" href="MY CSS.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header dengan nama dan foto -->
+        <div class="header">
+            <div class="name-box">NUR LAELA KHAMADAH</div>
+            <img src="POTO LELA.jpeg" alt="profile-pic" class="profile-pic">
+        </div>
+
+        <!-- Tentang Saya -->
+        <div class="section about">
+            <h2>TENTANG SAYA</h2>
+            <p>Saya adalah mahasiswa UNIVERSITAS KOMPUTAMA<br>
+               Cilacap semester 3 Kelas 3 TI A,Prodi Teknik Informatika.Asal saya dari bantarsari,Cilacap.</p>
+        </div>
+
+        <!-- Navigasi Tab -->
+        <div class="tabs">
+            <button class="tab-button active" data-tab="hobi">HOBI</button>
+            <button class="tab-button" data-tab="pendidikan">PENDIDIKAN</button>
+            <button class="tab-button" data-tab="contact">CONTACT</button>
+        </div>
+
+        <!-- Konten Tab -->
+        <div class="tab-content">
+            <div id="hobi" class="tab-pane active">
+                <h3>HOBI</h3>
+                <ul>
+                    <li>TRAVELLING</li>
+                    <li>MENDENGARKAN MUSIK</li>
+                    <li>OLAHRAGA</li>
+                </ul>
+            </div>
+
+            <div id="pendidikan" class="tab-pane">
+                <h3>PENDIDIKAN</h3>
+                <p>SD N KAMULYAN 01<br>2013 — 2018</p>
+                <p>MTs SALAFIYAH<br>2018 — 2021</p>
+                <p>SMA N 01 BANTARSARI<br>2021 — 2024</p>
+            </div>
+
+            <div id="contact" class="tab-pane">
+                <h3>CONTACT</h3>
+                <p>TELEPON:<br>085868771773</p>
+                <p>EMAIL:<br>nurlaelakhamadh255@gmail.com</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Script untuk tab navigation
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and panes
+                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                // Show corresponding pane
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
